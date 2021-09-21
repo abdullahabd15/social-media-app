@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Social Media</string>
+    <string name="default_error_message">Oops.. Something went wrong.</string>
+    <string name="count_of_comments">%1$s comments</string>
+    <string name="choose_one">Choose One</string>
+    <string name="photo_albums">Photo Albums</string>
+    <string name="user_not_found">Oops.. User not found.</string>
+    <string name="post_to_share">Posted by %1$s</string>
+</resources>

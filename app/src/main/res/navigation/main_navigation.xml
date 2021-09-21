@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/postsFragment">
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.abdullah.socialmedia.ui.fragments.PostsFragment"
+        android:label="fragment_posts"
+        tools:layout="@layout/fragment_posts">
+        <action
+            android:id="@+id/action_postsFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+        <action
+            android:id="@+id/action_postsFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="com.abdullah.socialmedia.ui.fragments.PostDetailFragment"
+        android:label="fragment_post_detail"
+        tools:layout="@layout/fragment_post_detail">
+        <action
+            android:id="@+id/action_postDetailFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+        <argument
+            android:name="post"
+            app:argType="com.abdullah.socialmedia.model.Post" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.abdullah.socialmedia.ui.fragments.UserDetailFragment"
+        android:label="fragment_user_detail"
+        tools:layout="@layout/fragment_user_detail">
+        <action
+            android:id="@+id/action_userDetailFragment_to_photoFragment"
+            app:destination="@id/photoFragment" />
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="com.abdullah.socialmedia.ui.fragments.PhotoFragment"
+        android:label="fragment_photo"
+        tools:layout="@layout/fragment_photo" >
+        <argument
+            android:name="imageUrl"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+</navigation>
